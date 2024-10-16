@@ -25,9 +25,9 @@ public class Cal {
         this.firstNum = firstNum;
     }
 
-    public void setResult(double result) {
-        this.result = result;
-    }
+//    public void setResult(double result) {
+//        this.result = result;
+//    }
 
 //    public void setQueue2(Queue<String> queue) {
 //        this.queue2 = queue;
