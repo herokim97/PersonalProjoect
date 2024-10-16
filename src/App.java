@@ -128,7 +128,8 @@ public class App {
 
 //                cal.setQueue(queue);
 
-                    result = cal.calulator();
+                    cal.calulator();
+                    result = cal.getResult();
 
                     //Queue 구현부
                     queue.add(String.valueOf(result));

@@ -58,8 +58,13 @@ public class Cal {
         return queue2.poll();
     }
 
+    //10.16 result getter 예제
+    public double getResult() {
+        return result;
+    }
 
-    public double calulator() {
+
+    public void calulator() {
         switch (this.operatorSymbol) {
             case "+":
                 AddOperator addOperator = new AddOperator();
@@ -86,7 +91,7 @@ public class Cal {
                 break;
 
         }
-        return result;
+
 
     }
 }
