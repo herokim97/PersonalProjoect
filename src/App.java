@@ -10,6 +10,8 @@ public class App {
         int firstNumber;
         int secondNumber;
         double result = 0;
+        Queue<String> queue = new LinkedList<>();
+        Cal cal = new Cal(queue);
 
         //class, nonClass 선택
         String choice;
@@ -67,6 +69,7 @@ public class App {
                     }
 
                     //결과 출력
+
                     System.out.println(firstNumber + " " + secondNumber + " = " + result);
 
 
@@ -87,30 +90,53 @@ public class App {
 
             while (true) {
 
-                System.out.println("input operator or exit>> ");
+                System.out.println("input operator or exit or valuePop>> ");
                 oper = sc.nextLine();
 
                 //종료 확인 조건문
                 if (oper.equals("exit")) {
                     break;
                 }
-                System.out.println("input firstNumber >> ");
-                firstNumber = sc.nextInt();
-                System.out.println("input secondNumber >> ");
-                secondNumber = sc.nextInt();
-                sc.nextLine();
 
-                Cal cal = new Cal();
+                else if(oper.equals("valuePop")) {
+                    String popValue = cal.removeResult();
 
-                cal.setFirstNum(firstNumber);
-                cal.setSecondNum(secondNumber);
-                cal.setOperatorSymbol(oper);
+                    if(popValue != null) {
+                        System.out.println("pop >> " + popValue);
+                    }
+                    else {
+                        System.out.println("no data, retry >> ");
+                    }
+
+                }
+                else {
+                    System.out.println("input firstNumber >> ");
+                    firstNumber = sc.nextInt();
+                    System.out.println("input secondNumber >> ");
+                    secondNumber = sc.nextInt();
+                    sc.nextLine();
+
+                    if(oper.equals("/") &&  secondNumber == 0) {
+                        System.out.println("input collect secondNumber >> ");
+                        continue;
+                    }
 
 
-                result = cal.calulator();
+                    cal.setFirstNum(firstNumber);
+                    cal.setSecondNum(secondNumber);
+                    cal.setOperatorSymbol(oper);
 
-                System.out.println(firstNumber + " "+ oper + " " + secondNumber + " = " + result);
+//                cal.setQueue(queue);
 
+                    result = cal.calulator();
+
+                    //Queue 구현부
+                    queue.add(String.valueOf(result));
+
+                    //Queue 구현부 끝
+
+                    System.out.println(firstNumber + " " + oper + " " + secondNumber + " = " + result);
+                }
             }
 
 
