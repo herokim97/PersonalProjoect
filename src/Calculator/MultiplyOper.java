@@ -1,13 +1,9 @@
 package Calculator;
 
-public class MultiplyOper extends Cal{
-    public MultiplyOper(double firstNum, double secondNum) {
-        super(firstNum, secondNum);
-    }
+public class MultiplyOper {
+    public MultiplyOper() {}
 
-    @Override
-    public double operator(){
-        return firstNum*secondNum;
+    public double multiplyOper(int firstNum, int secondNum) {
+        return  firstNum * secondNum;
     }
-
 }

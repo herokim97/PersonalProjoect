@@ -1,12 +1,9 @@
 package Calculator;
 
-public class AddOper extends Cal {
-   public AddOper(double firstNum, double secondNum){
-       super(firstNum, secondNum);
-   }
+public class AddOper {
+   public AddOper() {}
 
-   @Override
-    public double operator() {
+    public double appOper(int firstNum, int secondNum) {
        return firstNum + secondNum;
-   }
+    }
 }

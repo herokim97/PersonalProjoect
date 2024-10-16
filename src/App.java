@@ -2,17 +2,18 @@ import Calculator.*;
 
 import java.util.*;
 
-public class Main {
+public class App {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        double firstNumber;
-        double secondNumber;
+        int firstNumber;
+        int secondNumber;
         double result = 0;
 
         //class, nonClass 선택
         String choice;
+        String oper;
 
         //클래스 사용 유무 선택
         System.out.println("Class, NonClass choice >> ");
@@ -33,12 +34,12 @@ public class Main {
             while (true) {
 
                 System.out.println("put in the operator or exit >> ");
-                String oper = sc.nextLine();
+                oper = sc.nextLine();
                 if (oper.equals("+") || oper.equals("-") || oper.equals("*") || oper.equals("/") || oper.equals("%")) {
                     System.out.println("put in the firstNumber >> ");
-                    firstNumber = sc.nextDouble();
+                    firstNumber = sc.nextInt();
                     System.out.println("put in the secondNumber >> ");
-                    secondNumber = sc.nextDouble();
+                    secondNumber = sc.nextInt();
                     sc.nextLine();
 
                     switch (oper) {
@@ -82,46 +83,46 @@ public class Main {
         }
 
         //클래스로 구현
-        else if(choice.equals("Class")) {
+        else if (choice.equals("Class")) {
 
             while (true) {
 
-                System.out.println("input operator >> ");
-                String oper = sc.nextLine();
+                System.out.println("input operator or exit>> ");
+                oper = sc.nextLine();
 
                 //종료 확인 조건문
                 if (oper.equals("exit")) {
                     break;
                 }
                 System.out.println("input firstNumber >> ");
-                firstNumber = sc.nextDouble();
+                firstNumber = sc.nextInt();
                 System.out.println("input secondNumber >> ");
-                secondNumber = sc.nextDouble();
+                secondNumber = sc.nextInt();
                 sc.nextLine();
 
-                Cal cal = null;
+                Cal cal = new Cal();
 
                 switch (oper) {
                     case "+":
-                        cal = new AddOper(firstNumber, secondNumber);
-                        System.out.println(firstNumber + " + " + secondNumber + " = " + cal.operator());
+                        result = cal.addOperator((int) firstNumber,secondNumber);
+                        System.out.println(firstNumber + " + " + secondNumber + " = " + result);
                         break;
                     case "-":
-                        cal = new SubstractOper(firstNumber, secondNumber);
-                        System.out.println(firstNumber + " - " + secondNumber + " = " + cal.operator());
+                        result = cal.subtractOperator((int) firstNumber,secondNumber);
+                        System.out.println(firstNumber + " - " + secondNumber + " = " + result);
                         break;
                     case "*":
-                        cal = new MultiplyOper(firstNumber, secondNumber);
-                        System.out.println(firstNumber + " * " + secondNumber + " = " + cal.operator());
+                        result = cal.multiplyOperator((int) firstNumber,secondNumber);
+                        System.out.println(firstNumber + " * " + secondNumber + " = " + result);
                         break;
 
                     case "/":
-                        cal = new DiviOper(firstNumber, secondNumber);
-                        System.out.println(firstNumber + " / " + secondNumber + " = " + cal.operator());
+                        result = cal.divideOperator((int) firstNumber,secondNumber);
+                        System.out.println(firstNumber + " / " + secondNumber + " = " + result);
                         break;
                     case "%":
-                        cal = new Remainder(firstNumber, secondNumber);
-                        System.out.println(firstNumber + " % " + secondNumber + " = " + cal.operator());
+                        result = cal.remainderOperator((int) firstNumber,secondNumber);
+                        System.out.println(firstNumber + " % " + secondNumber + " = " + result);
                         break;
                     default:
                         System.out.println("Invalid operation.");
@@ -133,9 +134,7 @@ public class Main {
             }
 
 
-        }
-
-        else {
+        } else {
             System.out.println("not collect input, retry >> ");
         }
     }

@@ -1,12 +1,10 @@
 package Calculator;
 
-public class SubstractOper extends Cal{
-    public SubstractOper(double firstNum, double secondNum) {
-        super(firstNum, secondNum);
-    }
+public class SubstractOper {
 
-    @Override
-    public double operator() {
+    public SubstractOper() {}
+
+    public double subStractOper(int firstNum, int secondNum) {
         return firstNum - secondNum;
     }
 }

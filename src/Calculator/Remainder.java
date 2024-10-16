@@ -1,12 +1,9 @@
 package Calculator;
 
-public class Remainder extends Cal{
-    public Remainder(double firstNum, double secondNum) {
-        super(firstNum, secondNum);
-    }
+public class Remainder {
+   public Remainder() {}
 
-    @Override
-    public double operator() {
-        return firstNum%secondNum ;
+    public double remainderOper(int firstNum, int secondNum ) {
+       return firstNum%secondNum;
     }
 }

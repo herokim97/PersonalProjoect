@@ -1,14 +1,10 @@
 package Calculator;
 
-public class DiviOper extends Cal{
+public class DiviOper {
 
-    public DiviOper(double firstNum, double secondNum) {
-        super(firstNum, secondNum);
-    }
+    public DiviOper() {}
 
-
-    @Override
-    public double operator(){
-        return firstNum/secondNum;
+    public double diviOper(int firstNum, int secondNum) {
+        return firstNum / secondNum;
     }
 }
