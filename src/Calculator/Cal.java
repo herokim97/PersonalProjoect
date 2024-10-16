@@ -25,6 +25,7 @@ public class Cal {
         this.firstNum = firstNum;
     }
 
+    // Result 값이 Cal.class 에서 App.class 로 전달하기에, 매개변수로 들어오는 일은 없을것 같아 주석 처리함(10.16)
 //    public void setResult(double result) {
 //        this.result = result;
 //    }
