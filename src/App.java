@@ -104,24 +104,24 @@ public class App {
 
                 switch (oper) {
                     case "+":
-                        result = cal.addOperator((int) firstNumber,secondNumber);
+                        result = cal.addOperator(firstNumber,secondNumber);
                         System.out.println(firstNumber + " + " + secondNumber + " = " + result);
                         break;
                     case "-":
-                        result = cal.subtractOperator((int) firstNumber,secondNumber);
+                        result = cal.subtractOperator(firstNumber,secondNumber);
                         System.out.println(firstNumber + " - " + secondNumber + " = " + result);
                         break;
                     case "*":
-                        result = cal.multiplyOperator((int) firstNumber,secondNumber);
+                        result = cal.multiplyOperator(firstNumber,secondNumber);
                         System.out.println(firstNumber + " * " + secondNumber + " = " + result);
                         break;
 
                     case "/":
-                        result = cal.divideOperator((int) firstNumber,secondNumber);
+                        result = cal.divideOperator(firstNumber,secondNumber);
                         System.out.println(firstNumber + " / " + secondNumber + " = " + result);
                         break;
                     case "%":
-                        result = cal.remainderOperator((int) firstNumber,secondNumber);
+                        result = cal.remainderOperator(firstNumber,secondNumber);
                         System.out.println(firstNumber + " % " + secondNumber + " = " + result);
                         break;
                     default:
