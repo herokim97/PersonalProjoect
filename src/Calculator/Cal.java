@@ -1,52 +1,77 @@
 package Calculator;
 
-public  class Cal {
+public class Cal {
 
-    double firstNum;
-    double secondNum;
+    private int firstNum;
+    private int secondNum;
+    private String operatorSymbol;
+    private double result;
 
     // 기본 생성자
-    public Cal() {}
-
-    // 메서드
-    // 덧셈
-    public double addOperator(int firstNum, int secondNum) {
-        this.firstNum = firstNum;
-        this.secondNum = secondNum;
-
-        AddOper addOper = new AddOper();
-        return addOper.appOper(firstNum, secondNum);
+    public Cal() {
     }
 
-    public double subtractOperator(int firstNum, int secondNum) {
-        this.firstNum = firstNum;
-        this.secondNum = secondNum;
+    // Getter와 Setter
 
-        SubstractOper substractOper = new SubstractOper();
-        return substractOper.subStractOper(firstNum, secondNum);
+
+    public int getFirstNum() {
+        return firstNum;
     }
 
-    public double multiplyOperator(int firstNum, int secondNum) {
+    public void setFirstNum(int firstNum) {
         this.firstNum = firstNum;
-        this.secondNum = secondNum;
-        MultiplyOper multiplyOper = new MultiplyOper();
-        return multiplyOper.multiplyOper(firstNum, secondNum);
     }
 
-    public double divideOperator(int firstNum, int secondNum) {
-        this.firstNum = firstNum;
-        this.secondNum = secondNum;
-        DiviOper diviOper = new DiviOper();
-        return diviOper.diviOper(firstNum, secondNum);
+    public int getSecondNum() {
+        return secondNum;
     }
 
-    public double remainderOperator(int firstNum, int secondNum) {
-        this.firstNum = firstNum;
+    public void setSecondNum(int secondNum) {
         this.secondNum = secondNum;
-        Remainder  remainder = new Remainder();
-        return remainder.remainderOper(firstNum, secondNum);
+    }
+
+    public void setOperatorSymbol(String operatorSymbol) {
+        this.operatorSymbol = operatorSymbol;
+    }
+
+    public String getOperatorSymbol() {
+        return operatorSymbol;
     }
 
 
+    public double calulator() {
+        switch (this.operatorSymbol) {
+            case "+":
+                AddOperator addOperator = new AddOperator();
+                result = addOperator.operator(firstNum, secondNum);
+                break;
+            case "-":
+                SubstractOperator substractOperator = new SubstractOperator();
+                result = substractOperator.operator(firstNum, secondNum);
+                break;
+            case "*":
+                MultiplyOperator multiplyOperator = new MultiplyOperator();
+                result = multiplyOperator.operator(firstNum, secondNum);
+                break;
+            case "/":
+                DiviOperator diviOperator = new DiviOperator();
+                result = diviOperator.operator(firstNum, secondNum);
+                break;
+            case "%":
+                RemainderOperator remainderOperator = new RemainderOperator();
+                result = remainderOperator.operator(firstNum, secondNum);
+                break;
+            default:
+                System.out.println("Invalid operation.");
+                break;
 
+        }
+        return result;
+
+    }
 }
+
+
+
+
+

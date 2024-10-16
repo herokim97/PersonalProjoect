@@ -102,34 +102,14 @@ public class App {
 
                 Cal cal = new Cal();
 
-                switch (oper) {
-                    case "+":
-                        result = cal.addOperator(firstNumber,secondNumber);
-                        System.out.println(firstNumber + " + " + secondNumber + " = " + result);
-                        break;
-                    case "-":
-                        result = cal.subtractOperator(firstNumber,secondNumber);
-                        System.out.println(firstNumber + " - " + secondNumber + " = " + result);
-                        break;
-                    case "*":
-                        result = cal.multiplyOperator(firstNumber,secondNumber);
-                        System.out.println(firstNumber + " * " + secondNumber + " = " + result);
-                        break;
+                cal.setFirstNum(firstNumber);
+                cal.setSecondNum(secondNumber);
+                cal.setOperatorSymbol(oper);
 
-                    case "/":
-                        result = cal.divideOperator(firstNumber,secondNumber);
-                        System.out.println(firstNumber + " / " + secondNumber + " = " + result);
-                        break;
-                    case "%":
-                        result = cal.remainderOperator(firstNumber,secondNumber);
-                        System.out.println(firstNumber + " % " + secondNumber + " = " + result);
-                        break;
-                    default:
-                        System.out.println("Invalid operation.");
-                        return;
 
-                }
+                result = cal.calulator();
 
+                System.out.println(firstNumber + " "+ oper + " " + secondNumber + " = " + result);
 
             }
 
