@@ -136,7 +136,7 @@ public class App {
 
                     //Queue 구현부 끝
 
-                    System.out.println(firstNumber + " " + oper + " " + secondNumber + " = " + result);
+                    System.out.println(firstNumber + " " + oper + " " + secondNumber + " = " + result + "!!");
                 }
             }
 
